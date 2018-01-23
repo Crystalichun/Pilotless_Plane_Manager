@@ -7,7 +7,7 @@ import java.util.NoSuchElementException;
 public class FileUtils {
     public static void checkFile(String filePath) throws FileNotFoundException,NoSuchElementException{
         File file = new File(filePath);
-        if(file.exists()){
+        if(!file.exists()){
             throw new FileNotFoundException();
         }
         if(file.length() == 0){

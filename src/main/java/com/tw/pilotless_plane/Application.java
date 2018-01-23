@@ -3,11 +3,12 @@ package com.tw.pilotless_plane;
 import com.tw.pilotless_plane.utils.FileUtils;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Application {
-    public static void  main(String[] args)  {
+    public static void  main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
         try{
             String filePath = PlaneManager.scanFilePath(scanner);
@@ -19,6 +20,8 @@ public class Application {
             System.out.println("File not Found,check Please!");
         }catch (NoSuchElementException e){
             System.out.println("File is empty,check Please!");
+        }catch (IOException e){
+            System.out.println("Fail to read file,check Please!");
         }
 
     }
