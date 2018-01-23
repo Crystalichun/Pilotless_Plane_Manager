@@ -24,11 +24,16 @@ public class PlaneManager {
     }
 
 
-    public static int scanMsgId(Scanner scanner) {
+    public static String scanMsgId(Scanner scanner) {
         System.out.println("Please input message id.");
         while (true) {
+            String input = scanner.nextLine();
             try {
-                return Integer.parseInt(scanner.nextLine());
+                 if(!input.equals("stop")){
+                     return String.valueOf(Integer.parseInt(input));
+                 }else {
+                     return input;
+                 }
             } catch (NumberFormatException e) {
                 System.out.println("The message id must be number ! Check please. ");
             }
