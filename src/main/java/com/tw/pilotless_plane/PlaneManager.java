@@ -27,13 +27,13 @@ public class PlaneManager {
     public static String scanMsgId(Scanner scanner) {
         System.out.println("Please input message id.");
         while (true) {
-            String input = scanner.nextLine();
+                String input = scanner.nextLine();
             try {
-                 if(!input.equals("stop")){
-                     return String.valueOf(Integer.parseInt(input));
-                 }else {
-                     return input;
-                 }
+                if (! input.equals("stop")) {
+                    return String.valueOf(Integer.parseInt(input));
+                } else {
+                    return input;
+                }
             } catch (NumberFormatException e) {
                 System.out.println("The message id must be number ! Check please. ");
             }

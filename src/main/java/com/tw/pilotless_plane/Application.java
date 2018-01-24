@@ -23,17 +23,19 @@ public class Application {
                 System.out.println("File is empty,check Please!");
             }
         }
-
         PlaneManager.initPlane(filePath);
+
 
         while (true) {
             String msgId = PlaneManager.scanMsgId(scanner);
-            if (!msgId.equals("stop")) {
+            if (! msgId.equals("stop")) {
                 System.out.println(PlaneManager.getPlaneMsg(Integer.parseInt(msgId)));
             } else {
                 break;
             }
         }
     }
+
 }
+
 
